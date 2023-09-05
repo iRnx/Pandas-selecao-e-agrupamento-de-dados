@@ -1,0 +1,12 @@
+1) Encontre os valores únicos das colunas "Nível 1 - Setor" e "Estado" para identificar as atividades econômicas presentes na base de dados e se todos os Estados do Brasil estão presentes no DataFrame.
+R: emissoes_gases['Nível 1 - Setor'].unique()
+
+2) Filtre o DataFrame somente com os dados dos Estados da região Sul do Brasil.
+R: emissoes_gases[emissoes_gases['Estado'].isin(['PR', 'RS', 'SC'])]
+
+3) Filtre o DataFrame somente com os dados de "Mudança de Uso da Terra e Floresta" que sejam do Estado do Amazonas.
+R: emissoes_gases[(emissoes_gases['Nível 1 - Setor'] == 'Mudança de Uso da Terra e Floresta') & (emissoes_gases['Estado'] == 'AM')]
+
+4) Encontre o valor máximo de emissão do ano de 2021 para os dados de "Agropecuária" no Estado do Pará.
+R: emissoes_gases.loc[(emissoes_gases['Nível 1 - Setor'] == 'Agropecuária') & (emissoes_gases['Estado'] == 'PA'), 2021].max()
+
